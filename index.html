@@ -12,14 +12,17 @@
 <body>
   <header>
     <div class="name">
-      <h1>RAWG Games Explorer</h1>
+      <a href="/">
+        <h1>RAWG Games Explorer</h1>
+      </a>
+    </div>
+    <div class="favorites">
+      <a href="/src/pages/favorites.html">🖤 Favoritos</a>
     </div>
     <div class="search-bar">
-
       <input type="text" id="searchInput" placeholder="Portal 2">
     </div>
     <div class="filters">
-
       <select id="filterPlatform">
         <option value="">Todas las plataformas</option>
       </select>
@@ -29,6 +32,7 @@
       <button id="sortByName">Ordenar por Nombre</button>
       <button id="sortByRating">Ordenar por Puntuación</button>
     </div>
+
   </header>
   <main>
     <div id="gamesContainer" class="cards-container"></div>
