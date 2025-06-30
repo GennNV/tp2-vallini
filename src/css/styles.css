@@ -204,12 +204,12 @@ header {
 }
 
 .fav-btn {
-  background-color: #333;
+  background-color: #dc3545;
   color: #fff;
 }
 
 .fav-btn:hover {
-  background-color: #fff;
+  background-color: #771822;
 }
 
 /*MODAL*/
@@ -253,4 +253,25 @@ header {
 .modal-content img {
   margin: 0.5rem 0;
   border-radius: 8px;
+}
+
+/*FAVORITOS*/
+.remove-fav-btn {
+  background-color: #dc3545;
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+.remove-fav-btn:hover {
+  background-color: #771822;
+  font-weight: 600;
+  transition: background-color 0.8s ease;
+}
+
+#favoritesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
 }

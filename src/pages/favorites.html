@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos - RAWG Games Explorer</title>
+
+  <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="name">
+      <a href="../index.html">
+        <h1>RAWG Games Explorer</h1>
+      </a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Portal 2">
+    </div>
+    <div class="filters">
+      <select id="filterPlatform">
+        <option value="">Todas las plataformas</option>
+      </select>
+      <select id="filterGenre">
+        <option value="">Todos los géneros</option>
+      </select>
+      <button id="sortByName">Ordenar por Nombre</button>
+      <button id="sortByRating">Ordenar por Puntuación</button>
+    </div>
+  </header>
+  <main>
+    <div id="favoritesContainer" class="cards-container"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/favorites.js"></script>
+</body>
+
+</html>
