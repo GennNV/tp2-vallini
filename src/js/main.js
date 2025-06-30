@@ -1,6 +1,8 @@
 import { getGames, getGameById } from "./api.js";
+import { renderModal, closeModal } from "./modal.js";
 
 const gamesContainer = document.getElementById("gamesContainer");
+const modal = document.getElementById("modal");
 
 let allGames = [];
 

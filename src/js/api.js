@@ -15,3 +15,11 @@ export async function getGameById(id) {
   if (!response.ok) throw new Error("Error al cargar detalles");
   return await response.json();
 }
+
+export async function getGameScreenshots(id) {
+  const response = await fetch(
+    `https://api.rawg.io/api/games/${id}/screenshots?key=${apiKey}`
+  );
+  if (!response.ok) throw new Error("Error al traer capturas");
+  return await response.json();
+}
