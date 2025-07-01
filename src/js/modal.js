@@ -1,4 +1,5 @@
 import { getGameScreenshots } from "./api.js";
+//TODO REVISAR REQUISITOS Y SALTOSS DE LINEA
 
 export async function renderModal(game) {
   let screenshotsHTML = "";
@@ -15,14 +16,21 @@ export async function renderModal(game) {
   // requisitos
   let requisitosHTML = "";
   const pcPlatform = game.platforms.find((p) => p.platform.name === "PC");
-
   if (pcPlatform && pcPlatform.requirements) {
     requisitosHTML = `
-    <strong>Requisitos mínimos:</strong><br>
-    ${pcPlatform.requirements.minimum || "No especificados"}<br><br>
-    <strong>Requisitos recomendados:</strong><br>
-    ${pcPlatform.requirements.recommended || "No especificados"}
-  `;
+      <strong>Requisitos mínimos:</strong><br>
+      ${
+        pcPlatform.requirements.minimum
+          ? pcPlatform.requirements.minimum.replace(/\n/g, "<br>")
+          : "No especificados"
+      }<br><br>
+      <strong>Requisitos recomendados:</strong><br>
+      ${
+        pcPlatform.requirements.recommended
+          ? pcPlatform.requirements.recommended.replace(/\n/g, "<br>")
+          : "No especificados"
+      }
+    `;
   } else {
     requisitosHTML = "Requisitos no disponibles.";
   }

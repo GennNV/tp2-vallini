@@ -23,3 +23,11 @@ export async function getGameScreenshots(id) {
   if (!response.ok) throw new Error("Error al traer capturas");
   return await response.json();
 }
+
+export async function getGameTrailers(id) {
+  const response = await fetch(
+    `https://api.rawg.io/api/games/${id}/movies?key=${apiKey}`
+  );
+  if (!response.ok) throw new Error("No se pudieron cargar los trailers");
+  return await response.json();
+}

@@ -6,6 +6,9 @@ body {
   padding: 0;
   background-color: #151515;
 }
+html {
+  border: 1px solid red;
+}
 a {
   text-decoration: none;
   color: #fff;
@@ -16,15 +19,22 @@ header {
   background-color: #2d2d2d;
   padding: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.name {
-  position: relative;
-  right: 110px;
+.header-nav {
   display: flex;
   align-items: center;
+  width: 500px;
+  gap: 20px;
+}
+
+.header-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 .favorites {
@@ -34,9 +44,6 @@ header {
   border: 1px solid #444;
   background-color: #333;
   color: #fff;
-  text-align: center;
-  position: relative;
-  right: 80px;
 }
 
 .favorites a {
@@ -45,15 +52,10 @@ header {
   color: #fff;
 }
 
-.name h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-}
-
 #searchInput {
   width: 500px;
   padding: 0.5rem;
+  margin-left: 5px;
   border-radius: 15px;
   border: 1px solid #444;
   background-color: #333;
@@ -69,13 +71,12 @@ header {
 }
 
 .filters {
-  position: relative;
-  left: 100px;
+  display: flex;
+  gap: 10px;
 }
 
 #filterPlatform {
   padding: 0.5rem;
-  margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #444;
   background-color: #333;
@@ -91,7 +92,6 @@ header {
 
 #filterGenre {
   padding: 0.5rem;
-  margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #444;
   background-color: #333;
@@ -107,7 +107,6 @@ header {
 
 #sortByName {
   padding: 0.5rem;
-  margin-right: 10px;
   border-radius: 5px;
   border: 1px solid #444;
   background-color: #333;
@@ -274,4 +273,79 @@ header {
   align-items: center;
   font-size: 2rem;
   color: #fff;
+}
+
+.media-filter-text {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .title-text {
+    display: none;
+  }
+  .favorites-text {
+    display: none;
+  }
+  .favorites {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header-filters {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  #searchInput {
+    width: 300px;
+  }
+  #filterPlatform {
+    width: 100px;
+  }
+  #filterGenre {
+    width: 100px;
+  }
+  header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 530px) {
+  .card {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .card img {
+    width: 300px;
+    height: 200px;
+  }
+  .modal-content {
+    width: 60%;
+  }
+  .modal-content img {
+    width: 90%;
+  }
+  .header-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .header-filters {
+    .filters {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 0.5rem;
+    }
+  }
+
+  /* .header-filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  } */
 }

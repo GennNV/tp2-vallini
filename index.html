@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--TODO REVISAR TAMAÑO RESPONSIVE-->
 
 <head>
   <meta charset="UTF-8">
@@ -11,27 +12,32 @@
 
 <body>
   <header>
-    <div class="name">
-      <a href="/">
-        <h1>RAWG Games Explorer</h1>
-      </a>
-    </div>
-    <div class="favorites">
-      <a href="/src/pages/favorites.html">🖤 Favoritos</a>
-    </div>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Portal 2">
-    </div>
-    <div class="filters">
-      <select id="filterPlatform">
-        <option value="">Todas las plataformas</option>
-      </select>
-      <select id="filterGenre">
-        <option value="">Todos los géneros</option>
-      </select>
-      <button id="sortByName">Ordenar por Nombre</button>
-      <button id="sortByRating">Ordenar por Puntuación</button>
-    </div>
+    <section class="header-nav">
+      <div class="name">
+        <a href="/">
+          <h1>RAWG <span class="title-text">Games Explorer</span></h1>
+        </a>
+      </div>
+      <div class="favorites">
+        <a href="/src/pages/favorites.html">🖤 Fav<span class="favorites-text">oritos</span></a>
+      </div>
+
+    </section>
+    <section class="header-filters">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Portal 2">
+      </div>
+      <div class="filters">
+        <select id="filterPlatform">
+          <option value=""><span></span>Todas las Plataformas</option>
+        </select>
+        <select id="filterGenre">
+          <option value="">Todos los Géneros</option>
+        </select>
+        <button id="sortByName">Ordenar por Nombre</button>
+        <button id="sortByRating">Ordenar por Puntuación</button>
+      </div>
+    </section>
 
   </header>
   <main>

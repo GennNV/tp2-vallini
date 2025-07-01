@@ -1,4 +1,6 @@
-import { getGames, getGameById } from "./api.js";
+//TODO REVISAR QUE PASA EVENTO MODAL CON EL MODAL DE CARD
+
+import { getGames, getGameById, getGameTrailers } from "./api.js";
 import { renderModal, closeModal } from "./modal.js";
 import { fillFilters, applyFilters } from "./filters.js";
 import { saveFavorite } from "./favorites.js";
@@ -30,14 +32,52 @@ function renderGames(games) {
       <img src="${game.background_image}" alt="${game.name}">
       <div class="card-content">
         <h3>${game.name}</h3>
-        <p>Plataformas: ${game.platforms
-          .map((p) => p.platform.name)
-          .join(", ")}</p>
-        <p>Puntuación: ${game.rating}</p>
+        <p>${game.platforms.map((p) => p.platform.name).join(", ")}</p>
+        <p>Rating: ${game.rating}</p>
         <button class="details-btn" data-id="${game.id}">Más detalles</button>
-        <button class="fav-btn" data-id="${game.id}">❤</button>
+        <button class="fav-btn" data-id="${game.id}">❤️</button>
       </div>
     `;
+
+    let trailerCached = null; // para guardar la URL una sola vez
+
+    card.addEventListener("mouseenter", async () => {
+      try {
+        if (!trailerCached) {
+          const data = await getGameTrailers(game.id);
+          if (data.results.length > 0) {
+            trailerCached = data.results[0].data.max;
+          }
+        }
+
+        if (trailerCached) {
+          const img = card.querySelector("img");
+          img.style.display = "none";
+
+          // agregar video
+          let video = document.createElement("video");
+          video.src = trailerCached;
+          video.autoplay = true;
+          video.loop = true;
+          video.muted = true;
+          video.classList.add("trailer-video");
+          video.style.width = "100%";
+          video.style.height = "400px";
+
+          card.prepend(video);
+        }
+      } catch (err) {
+        console.error("Error obteniendo trailer:", err.message);
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      const video = card.querySelector("video");
+      if (video) video.remove();
+      const img = card.querySelector("img");
+      img.style.display = "block";
+    });
+
     gamesContainer.appendChild(card);
   });
 }
@@ -45,7 +85,7 @@ function renderGames(games) {
 // Eventos
 
 document.addEventListener("click", async (e) => {
-  if (e.target.classList.contains("details-btn")) {
+  if (e.target.classList.contains("details-btn") || e.target.closest(".card")) {
     const id = e.target.dataset.id;
     const game = await getGameById(id);
     renderModal(game);
