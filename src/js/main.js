@@ -1,10 +1,7 @@
-//TODO REVISAR QUE PASA EVENTO MODAL CON EL MODAL DE CARD
-
 import { getGames, getGameById, getGameTrailers } from "./api.js";
 import { renderModal, closeModal } from "./modal.js";
 import { fillFilters, applyFilters } from "./filters.js";
 import { saveFavorite } from "./favorites.js";
-
 const gamesContainer = document.getElementById("gamesContainer");
 const searchInput = document.getElementById("searchInput");
 const filterPlatform = document.getElementById("filterPlatform");
@@ -35,7 +32,9 @@ function renderGames(games) {
         <p>${game.platforms.map((p) => p.platform.name).join(", ")}</p>
         <p>Rating: ${game.rating}</p>
         <button class="details-btn" data-id="${game.id}">Más detalles</button>
-        <button class="fav-btn" data-id="${game.id}">❤️</button>
+        <button class="fav-btn" data-id="${
+          game.id
+        }"><img src="../../public/assets/corazon.png" alt="" style="width: 20px; height: 20px;"></button>
       </div>
     `;
 
@@ -85,7 +84,7 @@ function renderGames(games) {
 // Eventos
 
 document.addEventListener("click", async (e) => {
-  if (e.target.classList.contains("details-btn") || e.target.closest(".card")) {
+  if (e.target.classList.contains("details-btn")) {
     const id = e.target.dataset.id;
     const game = await getGameById(id);
     renderModal(game);
@@ -95,8 +94,9 @@ document.addEventListener("click", async (e) => {
     closeModal();
   }
 
-  if (e.target.classList.contains("fav-btn")) {
-    saveFavorite(e.target.dataset.id);
+  const favButton = e.target.closest(".fav-btn");
+  if (favButton) {
+    saveFavorite(favButton.dataset.id);
   }
 });
 

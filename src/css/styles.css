@@ -4,11 +4,10 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: #151515;
 }
-html {
-  border: 1px solid red;
-}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -26,7 +25,6 @@ header {
 .header-nav {
   display: flex;
   align-items: center;
-  width: 500px;
   gap: 20px;
 }
 
@@ -44,12 +42,51 @@ header {
   border: 1px solid #444;
   background-color: #333;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
+.home {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+}
+.home a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.home a:hover {
+  color: #151515;
+  transition: color 0.8s ease;
+}
+.home:hover {
+  background-color: #fff;
+  color: #151515;
+  transition: background-color 0.8s ease;
+}
 .favorites a {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
+}
+.favorites:hover {
+  background-color: #fff;
+  color: #151515;
+  transition: background-color 0.8s ease;
+}
+.favorites a:hover {
+  color: #151515;
+  transition: color 0.8s ease;
 }
 
 #searchInput {
@@ -141,6 +178,7 @@ header {
   grid-template-columns: repeat(auto-fill, minmax(500px, auto));
   gap: 5rem;
   padding: 1rem;
+  justify-content: center;
 }
 
 /* Card */
@@ -203,12 +241,13 @@ header {
 }
 
 .fav-btn {
-  background-color: #dc3545;
+  background-color: #333;
   color: #fff;
 }
 
 .fav-btn:hover {
-  background-color: #771822;
+  background-color: #fff;
+  transition: background-color 0.8s ease;
 }
 
 /*MODAL*/
@@ -231,22 +270,14 @@ header {
 }
 
 .modal-content {
+  position: relative;
   background: #151515;
   width: 60%;
   max-height: 80%;
   overflow-y: auto;
   padding: 1rem;
-  position: relative;
   border-radius: 8px;
   color: #fff;
-}
-
-.modal-content .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 2rem;
-  cursor: pointer;
 }
 
 .modal-content img {
@@ -254,6 +285,20 @@ header {
   border-radius: 8px;
 }
 
+.modal-title {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+.close {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  font-size: 2rem;
+  cursor: pointer;
+}
 /*FAVORITOS*/
 .remove-fav-btn {
   background-color: #dc3545;
@@ -268,11 +313,15 @@ header {
 }
 
 #favoritesContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, auto));
+  gap: 5rem;
+  padding: 1rem;
   font-size: 2rem;
   color: #fff;
+  place-items: center;
+  height: 80vh;
+  text-align: center;
 }
 
 .media-filter-text {
@@ -297,9 +346,12 @@ header {
   .header-filters {
     flex-direction: column;
   }
+  .home {
+    margin-right: 10px;
+  }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   #searchInput {
     width: 300px;
   }
@@ -312,11 +364,14 @@ header {
   header {
     flex-direction: column;
   }
+  .home {
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 530px) {
   .card {
-    width: 300px;
+    width: 60%;
     margin: 0 auto;
   }
   .card img {
@@ -341,11 +396,4 @@ header {
       gap: 0.5rem;
     }
   }
-
-  /* .header-filters {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 0.5rem;
-  } */
 }

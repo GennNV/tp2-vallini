@@ -36,7 +36,7 @@ export async function renderModal(game) {
   }
 
   modalBody.innerHTML = `
-    <h2>${game.name}</h2>
+    <h2 class="modal-title">${game.name}</h2>
     <p>${game.description_raw || "Sin descripción."}</p>
     <p><strong>Rating:</strong> ${game.rating}</p>
     <h3>Requisitos:</h3>

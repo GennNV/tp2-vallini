@@ -18,7 +18,7 @@ async function loadFavorites() {
 
   if (favoriteIds.length === 0) {
     favoritesContainer.innerHTML =
-      "<p>Aun no tienes juegos favoritos, prueba agregando uno con el boton de favoritos en la pagina principal</p>";
+      '<p>Aun no tienes juegos favoritos, prueba agregando uno con el boton de <img src="../../public/assets/corazon.png" alt="" style="width: 20px; height: 20px;"> en la página principal</p>';
     return;
   }
 
