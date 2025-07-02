@@ -13,6 +13,10 @@ a {
   color: #fff;
 }
 
+body {
+  cursor: url("../../public/assets/un-dedo.png") 0 0, auto;
+}
+
 /*HEADER*/
 header {
   background-color: #2d2d2d;
@@ -187,10 +191,10 @@ header {
   background: #202020;
   color: #fff;
   border-radius: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
-  cursor: pointer;
+  cursor: url("../../public/assets/cursor.png") 0 0, auto;
   display: flex;
   flex-direction: column;
 }
@@ -225,7 +229,7 @@ header {
   padding: 0.3rem 0.5rem;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: url("../../public/assets/cursor.png") 0 0, auto;
 }
 
 /*DETAILS BUTTON*/
@@ -297,7 +301,8 @@ header {
   right: 15px;
   z-index: 10;
   font-size: 1.5rem;
-  cursor: pointer;
+  cursor: url("../../public/assets/cursor.png") 0 0, auto;
+
   background-color: #151515;
   border-radius: 10px;
   padding-left: 0.5rem;

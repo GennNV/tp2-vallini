@@ -2,6 +2,8 @@ import { getGames, getGameById, getGameTrailers } from "./api.js";
 import { renderModal, closeModal } from "./modal.js";
 import { fillFilters, applyFilters } from "./filters.js";
 import { saveFavorite } from "./favorites.js";
+import heart from "../../public/assets/corazon.png";
+
 const gamesContainer = document.getElementById("gamesContainer");
 const searchInput = document.getElementById("searchInput");
 const filterPlatform = document.getElementById("filterPlatform");
@@ -34,7 +36,7 @@ function renderGames(games) {
         <button class="details-btn" data-id="${game.id}">Más detalles</button>
         <button class="fav-btn" data-id="${
           game.id
-        }"><img src="../../public/assets/corazon.png" alt="" style="width: 20px; height: 20px;"></button>
+        }"><img src="${heart}" alt="" style="width: 20px; height: 20px;"></button>
       </div>
     `;
 
