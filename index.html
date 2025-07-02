@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--TODO REVISAR MODAL FIXED-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAWG Games Explorer</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAWG Games Explorer</title>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+  </head>
 
-  <link rel="stylesheet" href="/src/css/styles.css">
-</head>
+  <body>
+    <header>
+      <section class="header-nav">
+        <div class="name">
+          <a href="/">
+            <h1>RAWG <span class="title-text">Games Explorer</span></h1>
+          </a>
+        </div>
+        <div class="favorites">
+          <a href="/src/pages/favorites.html"
+            ><img
+              src="./public/assets/corazon.png"
+              alt=""
+              width="20px"
+              height="20px"
+            />
+            Fav<span class="favorites-text">oritos</span></a
+          >
+        </div>
+      </section>
+      <section class="header-filters">
+        <div class="search-bar">
+          <input type="search" id="searchInput" placeholder="Portal 2" />
+        </div>
+        <div class="filters">
+          <select id="filterPlatform">
+            <option value=""><span></span>Todas las Plataformas</option>
+          </select>
+          <select id="filterGenre">
+            <option value="">Todos los Géneros</option>
+          </select>
+          <button id="sortByName">Ordenar por Nombre</button>
+          <button id="sortByRating">Ordenar por Puntuación</button>
+        </div>
+      </section>
+    </header>
+    <main>
+      <div id="gamesContainer" class="cards-container"></div>
+    </main>
 
-<body>
-  <header>
-    <section class="header-nav">
-      <div class="name">
-        <a href="/">
-          <h1>RAWG <span class="title-text">Games Explorer</span></h1>
-        </a>
+    <!--Modal de cards-->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody"></div>
       </div>
-      <div class="favorites">
-        <a href="/src/pages/favorites.html"><img src="./public/assets/corazon.png" alt="" width="20px" height="20px">
-          Fav<span class="favorites-text">oritos</span></a>
-      </div>
-
-    </section>
-    <section class="header-filters">
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Portal 2">
-      </div>
-      <div class="filters">
-        <select id="filterPlatform">
-          <option value=""><span></span>Todas las Plataformas</option>
-        </select>
-        <select id="filterGenre">
-          <option value="">Todos los Géneros</option>
-        </select>
-        <button id="sortByName">Ordenar por Nombre</button>
-        <button id="sortByRating">Ordenar por Puntuación</button>
-      </div>
-    </section>
-
-  </header>
-  <main>
-    <div id="gamesContainer" class="cards-container"></div>
-  </main>
-
-  <!--Modal de cards-->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modalBody"></div>
     </div>
-  </div>
 
-  <script type="module" src="/src/js/main.js"></script>
-</body>
-
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
 </html>

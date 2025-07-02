@@ -1,5 +1,4 @@
 import { getGameScreenshots } from "./api.js";
-//TODO REVISAR REQUISITOS Y SALTOSS DE LINEA
 
 export async function renderModal(game) {
   let screenshotsHTML = "";
@@ -7,7 +6,7 @@ export async function renderModal(game) {
   try {
     const screenshotsData = await getGameScreenshots(game.id);
     screenshotsHTML = screenshotsData.results
-      .map((s) => `<img src="${s.image}" style="width:80%; margin:5px 100px;">`)
+      .map((s) => `<img src="${s.image}" style="width:60%; margin:5px auto;">`)
       .join("");
   } catch (err) {
     screenshotsHTML = "<p>No hay capturas disponibles.</p>";
