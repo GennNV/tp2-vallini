@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favoritos - RAWG Games Explorer</title>
 
-    <link rel="stylesheet" href="/src/css/styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favoritos - RAWG Games Explorer</title>
 
-  <body>
-    <header>
-      <section class="header-nav">
-        <div class="home">
-          <a href="../index.html"
-            ><img src="../../public/assets/hogar.png" alt="Home" />Home</a
-          >
-        </div>
-      </section>
-      <section class="header-filters">
-        <div class="search-bar">
-          <input type="search" id="searchInput" placeholder="Portal 2" />
-        </div>
-        <div class="filters">
-          <select id="filterPlatform">
-            <option value=""><span></span>Todas las Plataformas</option>
-          </select>
-          <select id="filterGenre">
-            <option value="">Todos los Géneros</option>
-          </select>
-          <button id="sortByName">Ordenar por Nombre</button>
-          <button id="sortByRating">Ordenar por Puntuación</button>
-        </div>
-      </section>
-    </header>
-    <main>
-      <div id="favoritesContainer" class="cards-container"></div>
-    </main>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
 
-    <!-- Modal -->
-    <div id="modal" class="modal hidden">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="modalBody"></div>
+<body>
+  <header>
+    <section class="header-nav">
+      <div class="home">
+        <a href="../../index.html"><img src="../../public/assets/hogar.png" alt="Home" />Home</a>
       </div>
-    </div>
+    </section>
+    <section class="header-filters">
+      <div class="search-bar">
+        <input type="search" id="searchInput" placeholder="Portal 2" />
+      </div>
+      <div class="filters">
+        <select id="filterPlatform">
+          <option value=""><span></span>Todas las Plataformas</option>
+        </select>
+        <select id="filterGenre">
+          <option value="">Todos los Géneros</option>
+        </select>
+        <button id="sortByName">Ordenar por Nombre</button>
+        <button id="sortByRating">Ordenar por Puntuación</button>
+      </div>
+    </section>
+  </header>
+  <main>
+    <div id="favoritesContainer" class="cards-container"></div>
+  </main>
 
-    <script type="module" src="/src/js/favorites.js"></script>
-  </body>
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/js/favorites.js"></script>
+</body>
+
 </html>
