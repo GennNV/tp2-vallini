@@ -1,4 +1,4 @@
-/*RESET*/
+/* ===== RESET Y CONFIGURACIÓN BASE ===== */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -8,16 +8,18 @@ body {
   background-color: #151515;
 }
 
+/* Estilos base para enlaces */
 a {
   text-decoration: none;
   color: #fff;
 }
 
+/* Cursor personalizado para toda la página */
 body {
-  cursor: url("../../public/assets/un-dedo.png") 0 0, auto;
+  cursor: url("../../public/assets/juego.png") 0 0, auto;
 }
 
-/*HEADER*/
+/* ===== HEADER Y NAVEGACIÓN ===== */
 header {
   background-color: #2d2d2d;
   padding: 1rem;
@@ -26,12 +28,14 @@ header {
   align-items: center;
 }
 
+/* Contenedor de navegación principal */
 .header-nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
+/* Contenedor de filtros en el header */
 .header-filters {
   display: flex;
   align-items: center;
@@ -39,6 +43,9 @@ header {
   gap: 15px;
 }
 
+/* ===== BOTONES DE NAVEGACIÓN ===== */
+
+/* Botón de favoritos */
 .favorites {
   width: 150px;
   height: 30px;
@@ -53,6 +60,7 @@ header {
   margin-right: 5px;
 }
 
+/* Botón de inicio */
 .home {
   width: 150px;
   height: 30px;
@@ -61,6 +69,8 @@ header {
   background-color: #333;
   color: #fff;
 }
+
+/* Enlace dentro del botón de inicio */
 .home a {
   font-size: 1.2rem;
   font-weight: 600;
@@ -70,6 +80,8 @@ header {
   justify-content: center;
   gap: 20px;
 }
+
+/* Efectos hover para el botón de inicio */
 .home a:hover {
   color: #151515;
   transition: color 0.8s ease;
@@ -79,11 +91,15 @@ header {
   color: #151515;
   transition: background-color 0.8s ease;
 }
+
+/* Enlace dentro del botón de favoritos */
 .favorites a {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
 }
+
+/* Efectos hover para el botón de favoritos */
 .favorites:hover {
   background-color: #fff;
   color: #151515;
@@ -94,6 +110,7 @@ header {
   transition: color 0.8s ease;
 }
 
+/* ===== CAMPO DE BÚSQUEDA ===== */
 #searchInput {
   width: 500px;
   padding: 0.5rem;
@@ -103,6 +120,7 @@ header {
   background-color: #333;
 }
 
+/* Estados del campo de búsqueda */
 #searchInput:focus {
   background-color: #fff;
 }
@@ -112,11 +130,13 @@ header {
   transition: background-color 0.8s ease;
 }
 
+/* ===== FILTROS ===== */
 .filters {
   display: flex;
   gap: 10px;
 }
 
+/* Selector de plataforma */
 #filterPlatform {
   padding: 0.5rem;
   border-radius: 5px;
@@ -128,10 +148,10 @@ header {
 #filterPlatform:hover {
   background-color: #fff;
   color: #151515;
-
   transition: background-color 0.8s ease;
 }
 
+/* Selector de género */
 #filterGenre {
   padding: 0.5rem;
   border-radius: 5px;
@@ -143,10 +163,12 @@ header {
 #filterGenre:hover {
   background-color: #fff;
   color: #151515;
-
   transition: background-color 0.8s ease;
 }
 
+/* ===== BOTONES DE ORDENAMIENTO ===== */
+
+/* Botón de ordenar por nombre */
 #sortByName {
   padding: 0.5rem;
   border-radius: 5px;
@@ -158,10 +180,10 @@ header {
 #sortByName:hover {
   background-color: #fff;
   color: #151515;
-
   transition: background-color 0.8s ease;
 }
 
+/* Botón de ordenar por rating */
 #sortByRating {
   padding: 0.5rem;
   border-radius: 5px;
@@ -173,11 +195,10 @@ header {
 #sortByRating:hover {
   background-color: #fff;
   color: #151515;
-
   transition: background-color 0.8s ease;
 }
 
-/*CARDS*/
+/* ===== CONTENEDOR DE CARDS ===== */
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, auto));
@@ -186,7 +207,9 @@ header {
   justify-content: center;
 }
 
-/* Card */
+/* ===== CARDS DE JUEGOS ===== */
+
+/* Estilo base de la card */
 .card {
   background: #202020;
   color: #fff;
@@ -194,21 +217,24 @@ header {
   /* overflow: hidden; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
-  cursor: url("../../public/assets/cursor.png") 0 0, auto;
+  cursor: url("../../public/assets/juego.png") 0 0, auto;
   display: flex;
   flex-direction: column;
 }
 
+/* Efecto hover para las cards */
 .card:hover {
   transform: scale(1.02);
 }
 
+/* Imagen de la card */
 .card img {
   width: 100%;
   height: 400px;
   object-fit: cover;
 }
 
+/* Contenido de la card */
 .card-content {
   padding: 0.5rem;
 }
@@ -229,10 +255,12 @@ header {
   padding: 0.3rem 0.5rem;
   border: none;
   border-radius: 4px;
-  cursor: url("../../public/assets/cursor.png") 0 0, auto;
+  cursor: url("../../public/assets/un-dedo.png") 0 0, auto;
 }
 
-/*DETAILS BUTTON*/
+/* ===== BOTONES DE CARD ===== */
+
+/* Botón de detalles */
 .details-btn {
   border: 1px solid #444;
   background-color: #333;
@@ -245,6 +273,7 @@ header {
   transition: background-color 0.8s ease;
 }
 
+/* Botón de favoritos */
 .fav-btn {
   background-color: #333;
   color: #fff;
@@ -255,7 +284,9 @@ header {
   transition: background-color 0.8s ease;
 }
 
-/*MODAL*/
+/* ===== MODAL ===== */
+
+/* Overlay del modal */
 .modal {
   position: fixed;
   top: 0;
@@ -270,10 +301,12 @@ header {
   backdrop-filter: blur(10px);
 }
 
+/* Estado oculto del modal */
 .modal.hidden {
   display: none;
 }
 
+/* Contenido del modal */
 .modal-content {
   position: relative;
   background: #151515;
@@ -290,19 +323,21 @@ header {
   border-radius: 8px;
 }
 
+/* Título del modal */
 .modal-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Botón de cerrar modal */
 .close {
   position: absolute;
   top: 15px;
   right: 15px;
   z-index: 10;
   font-size: 1.5rem;
-  cursor: url("../../public/assets/cursor.png") 0 0, auto;
-
+  cursor: url("../../public/assets/un-dedo.png") 0 0, auto;
   background-color: #151515;
   border-radius: 10px;
   padding-left: 0.5rem;
@@ -310,7 +345,10 @@ header {
   padding-bottom: 0.4rem;
   border: 1px solid #444;
 }
-/*FAVORITOS*/
+
+/* ===== SECCIÓN DE FAVORITOS ===== */
+
+/* Botón para quitar de favoritos */
 .remove-fav-btn {
   background-color: #dc3545;
   color: #fff;
@@ -323,6 +361,7 @@ header {
   transition: background-color 0.8s ease;
 }
 
+/* Contenedor de favoritos */
 #favoritesContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, auto));
@@ -335,6 +374,13 @@ header {
   text-align: center;
 }
 
+#favoritesContainer p {
+  font-size: 1.5rem;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVIDAD ===== */
+
+/* Pantallas grandes (hasta 1400px) */
 @media (max-width: 1400px) {
   .title-text {
     display: none;
@@ -350,6 +396,7 @@ header {
   }
 }
 
+/* Pantallas medianas (hasta 1200px) */
 @media (max-width: 1200px) {
   .header-filters {
     flex-direction: column;
@@ -359,6 +406,7 @@ header {
   }
 }
 
+/* Pantallas pequeñas (hasta 750px) */
 @media (max-width: 750px) {
   #searchInput {
     width: 80%;
@@ -376,11 +424,12 @@ header {
     margin-bottom: 10px;
   }
   #favoritesContainer p {
-    width: 80%;
+    width: 60%;
     font-size: 1rem;
   }
 }
 
+/* Pantallas muy pequeñas (hasta 530px) */
 @media (max-width: 530px) {
   .card {
     width: 60%;
